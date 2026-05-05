@@ -1,11 +1,10 @@
 # Motorista no Azul
 
-Landing page, checkout simulado, order bump, upsell e calculadora funcional para vender um ebook voltado a motoristas de aplicativo no Brasil.
+Landing page, upsell e calculadora funcional para vender um ebook voltado a motoristas de aplicativo no Brasil.
 
 ## Rotas
 
 - `/` - Landing page principal do ebook.
-- `/checkout` - Checkout simulado com order bump.
 - `/upsell` - Oferta pos-compra da Calculadora Mensal do Motorista.
 
 ## Desenvolvimento
@@ -23,6 +22,14 @@ npm.cmd run lint
 npm.cmd run build
 ```
 
-## Observacao
+## Checkout
 
-O checkout e demonstrativo. A estrutura de formulario e payload ja esta pronta para futura integracao com gateway de pagamento, backend e entrega automatica do acesso.
+Os botoes de compra usam a variavel `NEXT_PUBLIC_CHECKOUT_URL`.
+
+Crie um arquivo `.env.local` com o link da sua gateway:
+
+```bash
+NEXT_PUBLIC_CHECKOUT_URL=https://seu-link-de-pagamento.com
+```
+
+Na Vercel, adicione a mesma variavel em Project Settings > Environment Variables e faca um novo deploy.

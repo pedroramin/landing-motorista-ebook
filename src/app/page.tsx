@@ -21,7 +21,7 @@ import {
 import { CTAButton } from "@/components/CTAButton";
 import { EbookMockup } from "@/components/EbookMockup";
 import { Footer } from "@/components/Footer";
-import { mainOffer } from "@/lib/offers";
+import { checkoutUrl, mainOffer } from "@/lib/offers";
 
 const painCards = [
   {
@@ -114,7 +114,7 @@ const faqs = [
   {
     question: "Em quanto tempo recebo?",
     answer:
-      "O acesso e imediato apos a confirmacao da compra no checkout real que for integrado.",
+      "O acesso e imediato apos a confirmacao da compra na gateway de pagamento.",
   },
   {
     question: "E se eu nao tiver planilha?",
@@ -162,7 +162,7 @@ export default function Home() {
             </a>
           </nav>
           <Link
-            href="/checkout"
+            href={checkoutUrl}
             className="hidden rounded-[8px] bg-white px-4 py-3 text-sm font-black text-[#151515] transition hover:bg-[#ffd43b] sm:inline-flex"
           >
             Comprar agora
@@ -185,7 +185,7 @@ export default function Home() {
               corridas como um negocio.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <CTAButton href="/checkout">Quero controlar meus gastos agora</CTAButton>
+              <CTAButton href={checkoutUrl}>Quero controlar meus gastos agora</CTAButton>
               <p className="text-sm font-bold text-white/70">
                 Ebook digital | Acesso imediato | Linguagem simples
               </p>
@@ -322,7 +322,7 @@ export default function Home() {
             </div>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <CTAButton href="/checkout" icon={Banknote}>
+              <CTAButton href={checkoutUrl} icon={Banknote}>
                 Comprar agora e acessar o ebook
               </CTAButton>
               <p className="text-sm font-bold text-[#596354]">
@@ -451,7 +451,7 @@ export default function Home() {
             escapar sem perceber.
           </p>
           <div className="mt-8">
-            <CTAButton href="/checkout">Quero meu ebook agora</CTAButton>
+            <CTAButton href={checkoutUrl}>Quero meu ebook agora</CTAButton>
           </div>
         </div>
       </section>

@@ -8,12 +8,10 @@ export const mainOffer = {
   price: "R$ 19,90",
 };
 
-export const orderBumpOffer = {
-  name: "Checklist Rapido: 27 Gastos que Todo Motorista Precisa Controlar",
-  price: "R$ 9,90",
-};
-
 export const upsellOffer = {
   name: "Calculadora Mensal do Motorista",
   price: "R$ 29,90",
 };
+
+export const checkoutUrl =
+  process.env.NEXT_PUBLIC_CHECKOUT_URL || "/#oferta";
