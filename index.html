@@ -235,6 +235,144 @@
       border-radius: 18px;
       filter: drop-shadow(0 24px 60px rgba(0, 0, 0, 0.45));
     }
+
+    .offer-kit {
+      margin-top: 18px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(20,148,71,.18);
+      background: #f2fbf4;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .offer-kit-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 950;
+      color: #101610;
+      line-height: 1.35;
+      margin-bottom: 14px;
+    }
+    .offer-kit-title span {
+      width: 28px;
+      height: 28px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      background: var(--green);
+      color: white;
+      font-size: .95rem;
+    }
+    .bonus-stack {
+      display: grid;
+      gap: 10px;
+    }
+    .bonus-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 11px 12px;
+      border-radius: 7px;
+      border: 1px solid rgba(17,17,17,.08);
+      background: rgba(255,255,255,.72);
+      font-size: .92rem;
+      line-height: 1.45;
+      color: #263025;
+      font-weight: 750;
+    }
+    .bonus-item strong {
+      display: block;
+      color: #111;
+      font-size: .96rem;
+      margin-bottom: 2px;
+    }
+    .bonus-check {
+      width: 22px;
+      height: 22px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      background: var(--yellow);
+      color: #111;
+      font-weight: 950;
+      margin-top: 1px;
+    }
+    .value-stack {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+    .value-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      font-weight: 850;
+      color: #293128;
+    }
+    .value-row span:last-child {
+      color: var(--muted);
+      text-decoration: line-through;
+      font-weight: 950;
+      white-space: nowrap;
+    }
+    .value-total {
+      margin-top: 12px;
+      padding: 13px 14px;
+      border-radius: 7px;
+      background: #111;
+      color: white;
+      font-weight: 950;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+    }
+    .value-total strong { color: var(--yellow); font-size: 1.1rem; }
+    .scarcity-box {
+      margin-top: 18px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,212,59,.42);
+      background: #fff8dc;
+      padding: 14px 16px;
+      color: #2f2600;
+      font-weight: 900;
+      line-height: 1.55;
+    }
+    .offer-mini-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+      color: #596354;
+      font-size: .92rem;
+      font-weight: 850;
+    }
+    .offer-mini-proof span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 999px;
+      padding: 8px 11px;
+    }
+    .cta-subcopy {
+      margin-top: 10px;
+      color: #596354;
+      font-size: .9rem;
+      font-weight: 800;
+      line-height: 1.55;
+    }
+    .bonus-section { background: #f2fbf4; }
+    .bonus-section .card {
+      border-color: rgba(20,148,71,.16);
+    }
+
     .price-box { margin-top: 28px; border: 1px solid var(--line); background: var(--bg); border-radius: var(--radius); padding: 20px; }
     .old-price { color: var(--muted); font-size: .9rem; font-weight: 800; }
     .old-price span { font-size: 1.1rem; font-weight: 950; text-decoration: line-through; }
@@ -314,7 +452,7 @@
 <body>
   <!-- TROQUE ESTE LINK PELO CHECKOUT REAL DA TICTO -->
   <script>
-    const CHECKOUT_URL = "https://checkout.ticto.app/OB76AC701";
+    const CHECKOUT_URL = "COLE_AQUI_O_LINK_DO_CHECKOUT_DA_TICTO";
     document.addEventListener("DOMContentLoaded", function () {
       document.querySelectorAll(".checkout-link").forEach(function (link) {
         link.setAttribute("href", CHECKOUT_URL);
@@ -335,7 +473,7 @@
           <a href="#oferta">Oferta</a>
           <a href="#faq">Dúvidas</a>
         </nav>
-        <a href="#oferta" class="btn btn-yellow checkout-link">Comprar agora</a>
+        <a href="#oferta" class="btn btn-yellow checkout-link">Comprar por R$ 19,90</a>
       </header>
 
       <div class="container">
@@ -344,7 +482,7 @@
           <h1>Pare de dirigir no escuro: descubra para onde seu dinheiro está indo.</h1>
           <p class="lead">Você não precisa rodar mais sem saber o que sobra. Aprenda a separar faturamento de lucro, calcular seus custos e tratar suas corridas como um negócio.</p>
           <div class="hero-actions">
-            <a href="#oferta" class="btn btn-primary checkout-link">Quero controlar meus gastos agora →</a>
+            <a href="#oferta" class="btn btn-primary checkout-link">Quero descobrir meu lucro real →</a>
             <p class="microcopy">Ebook digital | Acesso imediato | Linguagem simples</p>
           </div>
           <p class="hero-quote">Você não precisa rodar mais. Primeiro, precisa descobrir quanto está realmente sobrando.</p>
@@ -423,36 +561,62 @@
 
     <section id="oferta" class="section offer">
       <div class="container offer-grid">
-        <div class="offer-image-wrap">
-          <img class="offer-image" src="assets/ebook-principal.png" alt="Ebook Motorista no Azul" />
+        <div>
+          <div class="offer-image-wrap">
+            <img class="offer-image" src="assets/ebook-principal.png" alt="Ebook Motorista no Azul" />
+          </div>
+
+          <div class="offer-kit">
+            <div class="offer-kit-title"><span>✓</span>O que você recebe hoje no acesso:</div>
+            <div class="bonus-stack">
+              <div class="bonus-item"><span class="bonus-check">1</span><div><strong>Ebook Motorista no Azul</strong>O guia para entender faturamento, custos, lucro real, custo por km e meta diária.</div></div>
+              <div class="bonus-item"><span class="bonus-check">2</span><div><strong>Checklist de gastos invisíveis</strong>Para não deixar combustível, alimentação, lavagem, estacionamento e manutenção comerem seu lucro sem você perceber.</div></div>
+              <div class="bonus-item"><span class="bonus-check">3</span><div><strong>Guia rápido de meta diária</strong>Para parar de rodar por achismo e definir uma meta baseada em lucro, não só em faturamento.</div></div>
+              <div class="bonus-item"><span class="bonus-check">4</span><div><strong>Modelo simples de controle semanal</strong>Um caminho fácil para acompanhar entradas, saídas e o que realmente ficou limpo.</div></div>
+            </div>
+          </div>
         </div>
 
         <div>
           <p class="eyebrow">Oferta especial</p>
-          <h2>Motorista no Azul: controle o dinheiro das suas corridas sem complicação.</h2>
-          <p class="lead">Aprenda a descobrir quanto você realmente ganha, controlar combustível, manutenção, alimentação, taxas e transformar suas corridas em um negócio mais lucrativo.</p>
+          <h2>Leve o kit Motorista no Azul e descubra se suas corridas estão deixando lucro de verdade.</h2>
+          <p class="lead">Você não precisa esperar o fim do mês para perceber que trabalhou muito e sobrou pouco. Aprenda o que analisar, quais gastos observar e como tratar seu volante como um negócio.</p>
+
+          <div class="scarcity-box">⚠️ Atenção: o app mostra o faturamento. Este material te ajuda a enxergar o que realmente sobra depois dos custos.</div>
+
           <div class="price-box">
-            <p class="old-price">De <span>R$ 47</span></p>
+            <p class="old-price">Oferta de lançamento: de <span>R$ 47</span> por</p>
             <p class="price">R$ 19,90</p>
-            <p class="price-copy">Por menos que o valor de uma corrida média, você pode aprender a controlar o dinheiro de todas as suas corridas do mês.</p>
+            <p class="price-copy">Por menos que uma corrida média, você acessa um kit direto para parar de confundir dinheiro entrando com lucro real.</p>
+
+            <div class="value-stack">
+              <div class="value-row"><span>Ebook principal Motorista no Azul</span><span>R$ 47</span></div>
+              <div class="value-row"><span>Checklist de gastos invisíveis</span><span>R$ 17</span></div>
+              <div class="value-row"><span>Guia rápido de meta diária</span><span>R$ 17</span></div>
+              <div class="value-row"><span>Modelo de controle semanal</span><span>R$ 17</span></div>
+            </div>
+            <div class="value-total"><span>Valor percebido do kit</span><strong>R$ 98</strong></div>
           </div>
+
           <div class="offer-actions">
-            <a href="#" class="btn btn-primary checkout-link">Comprar agora e acessar o ebook →</a>
-            <p class="microcopy" style="color:#596354">Garantia de 7 dias. Acesso digital.</p>
+            <a href="#" class="btn btn-primary checkout-link">Quero acessar o kit por R$ 19,90 →</a>
           </div>
+          <p class="cta-subcopy">Acesso imediato • Produto digital • Garantia de 7 dias • Linguagem simples para motorista de app</p>
+          <div class="offer-mini-proof"><span>✅ Sem matemática complicada</span><span>✅ Serve para Uber, 99 e outros apps</span><span>✅ Feito para usar no celular</span></div>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section bonus-section">
       <div class="container">
-        <p class="eyebrow">Bônus digitais</p>
-        <h2>Além do ebook, você recebe ferramentas simples para começar.</h2>
+        <p class="eyebrow">Por que esse kit vale a pena?</p>
+        <h2>Você não compra só um ebook. Você compra clareza para decidir melhor no volante.</h2>
+        <p class="lead">O objetivo é simples: colocar número onde hoje existe dúvida. Quando você sabe o que entra, o que sai e o que sobra, fica mais fácil cortar desperdícios e escolher melhor como rodar.</p>
         <div class="grid-4">
-          <article class="card"><span class="icon">✅</span><h3>Checklist de gastos do motorista</h3></article>
-          <article class="card"><span class="icon">🧾</span><h3>Modelo simples de controle semanal</h3></article>
-          <article class="card"><span class="icon">⚠️</span><h3>Lista dos gastos invisíveis que mais comem o lucro</h3></article>
-          <article class="card"><span class="icon">📈</span><h3>Guia rápido para definir meta diária</h3></article>
+          <article class="card"><span class="icon">💰</span><h3>Lucro real</h3><p>Entenda a diferença entre faturar bem e realmente ficar com dinheiro limpo.</p></article>
+          <article class="card"><span class="icon">📍</span><h3>Custo por km</h3><p>Descubra por que quilômetro rodado sem controle pode virar prejuízo escondido.</p></article>
+          <article class="card"><span class="icon">🔧</span><h3>Gastos invisíveis</h3><p>Veja os custos pequenos que parecem nada no dia, mas pesam no mês.</p></article>
+          <article class="card"><span class="icon">🎯</span><h3>Meta diária</h3><p>Pare de rodar até cansar e comece a trabalhar com meta baseada em lucro.</p></article>
         </div>
       </div>
     </section>
@@ -460,8 +624,8 @@
     <section class="section testimonials">
       <div class="container">
         <p class="eyebrow">Prova social</p>
-        <h2>Motoristas que já começaram a olhar para os números com mais clareza.</h2>
-        <p class="lead">Exemplos de relatos que mostram o tipo de transformação que o método busca gerar: menos achismo, mais controle e decisões mais conscientes no volante.</p>
+        <h2>Situações que muitos motoristas só percebem depois que começam a controlar.</h2>
+        <p class="lead">Esses exemplos mostram dores comuns de quem roda por aplicativo: faturamento bonito no app, mas pouco dinheiro limpo no bolso.</p>
         <div class="testimonials-grid">
           <article class="testimonial-card">
             <div class="testimonial-top"><div class="avatar">RS</div><div><strong>Rafael S.</strong><span>Motorista de app • São Paulo/SP</span></div></div>
@@ -479,7 +643,7 @@
             <p>“Antes eu rodava até cansar. Agora comecei a pensar em meta diária, custo por km e nos horários que realmente compensam. Só isso já mudou minha forma de trabalhar.”</p>
           </article>
         </div>
-        <p class="testimonial-note">Relatos ilustrativos baseados em situações comuns de motoristas de aplicativo. Substitua por depoimentos reais quando tiver autorização dos compradores.</p>
+        <p class="testimonial-note">Exemplos ilustrativos baseados em situações comuns de motoristas de aplicativo. Substitua por depoimentos reais quando tiver autorização dos compradores.</p>
       </div>
     </section>
 
