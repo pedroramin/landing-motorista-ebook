@@ -90,6 +90,31 @@ const bonuses = [
   ["Guia rapido para definir meta diaria", TrendingUp],
 ] as const;
 
+
+const testimonials = [
+  {
+    initials: "RS",
+    name: "Rafael S.",
+    profile: "Motorista de app • São Paulo/SP",
+    text:
+      "Eu achava que estava indo bem porque o aplicativo mostrava um bom valor no fim do dia. Depois que comecei a separar combustível, alimentação e manutenção, entendi quanto realmente ficava para mim.",
+  },
+  {
+    initials: "MC",
+    name: "Marcos C.",
+    profile: "Motorista de app • Belo Horizonte/MG",
+    text:
+      "O que mais me ajudou foi parar de misturar dinheiro da casa com dinheiro do carro. Agora eu olho para o lucro real, não só para o faturamento bruto.",
+  },
+  {
+    initials: "JL",
+    name: "João L.",
+    profile: "Motorista de app • Curitiba/PR",
+    text:
+      "Antes eu rodava até cansar. Agora comecei a pensar em meta diária, custo por km e nos horários que realmente compensam. Só isso já mudou minha forma de trabalhar.",
+  },
+] as const;
+
 const faqs = [
   {
     question: "Serve para quem roda so de vez em quando?",
@@ -359,37 +384,55 @@ export default function Home() {
 
       <section className="bg-[#101010] px-5 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-6xl">
-          <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-            <div>
-              <p className="text-sm font-black uppercase tracking-[0.12em] text-[#ffd43b]">
-                Prova social
-              </p>
-              <h2 className="mt-3 text-3xl font-black leading-tight sm:text-5xl">
-                Espaco preparado para depoimentos reais.
-              </h2>
-              <p className="mt-5 text-lg leading-8 text-white/70">
-                Nao vamos inventar depoimento. Quando motoristas aplicarem o
-                metodo e autorizarem o uso, esta area entra com relatos reais.
-              </p>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {[1, 2].map((item) => (
-                <article
-                  key={item}
-                  className="rounded-[8px] border border-white/10 bg-white/7 p-5"
-                >
-                  <div className="mb-5 h-10 w-10 rounded-[8px] bg-white/12" />
-                  <p className="text-lg font-black leading-7">
-                    Espaco reservado para depoimentos de motoristas que
-                    aplicaram o metodo.
-                  </p>
-                  <p className="mt-4 text-sm font-bold text-white/50">
-                    Depoimento futuro #{item}
-                  </p>
-                </article>
-              ))}
-            </div>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-black uppercase tracking-[0.12em] text-[#ffd43b]">
+              Prova social
+            </p>
+            <h2 className="mt-3 text-3xl font-black leading-tight sm:text-5xl">
+              Motoristas que começaram a olhar para os números com mais clareza.
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-white/70">
+              Situações comuns de quem para de olhar só para o faturamento do app
+              e começa a entender combustível, manutenção, tempo e lucro real.
+            </p>
           </div>
+
+          <div className="mt-10 grid gap-5 lg:grid-cols-3">
+            {testimonials.map((testimonial) => (
+              <article
+                key={testimonial.name}
+                className="rounded-[18px] border border-white/10 bg-white/[0.07] p-6 shadow-[0_18px_54px_rgba(0,0,0,0.24)]"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-gradient-to-br from-[#ffd43b] to-[#149447] text-sm font-black text-[#151515]">
+                    {testimonial.initials}
+                  </div>
+                  <div>
+                    <h3 className="text-base font-black text-white">
+                      {testimonial.name}
+                    </h3>
+                    <p className="mt-1 text-sm font-bold text-white/52">
+                      {testimonial.profile}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-5 text-lg tracking-[0.18em] text-[#ffd43b]">
+                  ★★★★★
+                </div>
+
+                <p className="mt-4 text-base font-medium leading-8 text-white/78">
+                  “{testimonial.text}”
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <p className="mx-auto mt-6 max-w-3xl text-center text-sm font-bold leading-6 text-white/45">
+            Relatos ilustrativos baseados em situações comuns de motoristas de
+            aplicativo. Substitua por depoimentos reais quando tiver autorização
+            dos compradores.
+          </p>
         </div>
       </section>
 
