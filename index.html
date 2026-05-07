@@ -119,6 +119,13 @@
       display: grid; place-items: center;
       background: var(--yellow); color: var(--text); font-size: 1.2rem;
     }
+    .brand-logo img {
+      height: 54px;
+      width: auto;
+      display: block;
+      max-width: 260px;
+      object-fit: contain;
+    }
     .nav { display: flex; align-items: center; gap: 24px; color: rgba(255,255,255,.78); font-size: .875rem; font-weight: 800; }
     .nav a:hover { color: var(--yellow); }
     .hero-content { position: relative; z-index: 2; padding: 64px 0 88px; max-width: 780px; }
@@ -194,6 +201,22 @@
     .ebook-feature { border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.08); border-radius: var(--radius); padding: 12px; }
     .ebook-feature span { display: block; color: var(--yellow); margin-bottom: 8px; }
     .ebook-name { margin-top: 36px; text-align: center; font-size: .88rem; color: #4e574c; font-weight: 750; }
+    .offer-image-wrap {
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+      overflow: visible;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .offer-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 18px;
+      filter: drop-shadow(0 24px 60px rgba(0, 0, 0, 0.45));
+    }
     .price-box { margin-top: 28px; border: 1px solid var(--line); background: var(--bg); border-radius: var(--radius); padding: 20px; }
     .old-price { color: var(--muted); font-size: .9rem; font-weight: 800; }
     .old-price span { font-size: 1.1rem; font-weight: 950; text-decoration: line-through; }
@@ -262,14 +285,16 @@
       .modules, .grid-4 { grid-template-columns: 1fr; }
       .price { font-size: 2.7rem; }
       .offer-actions .btn { width: 100%; }
+      .brand-logo img { height: 42px; max-width: 210px; }
+      .offer-image-wrap { max-width: 320px; }
       .footer-grid { flex-direction: column; }
     }
   </style>
 </head>
 <body>
-  
+  <!-- TROQUE ESTE LINK PELO CHECKOUT REAL DA TICTO -->
   <script>
-    const CHECKOUT_URL = "https://checkout.ticto.app/OB76AC701";
+    const CHECKOUT_URL = "COLE_AQUI_O_LINK_DO_CHECKOUT_DA_TICTO";
     document.addEventListener("DOMContentLoaded", function () {
       document.querySelectorAll(".checkout-link").forEach(function (link) {
         link.setAttribute("href", CHECKOUT_URL);
@@ -281,9 +306,8 @@
     <section class="hero">
       <div class="hero-bg" aria-hidden="true"></div>
       <header class="header container">
-        <a href="#" class="brand" aria-label="Motorista no Azul">
-          <span class="brand-icon">🚘</span>
-          <span>Motorista no Azul</span>
+        <a href="#" class="brand brand-logo" aria-label="Motorista no Azul">
+          <img src="assets/logo-motorista-no-azul.png" alt="Logo Motorista no Azul" />
         </a>
         <nav class="nav" aria-label="Navegação principal">
           <a href="#aprenda">O que aprende</a>
@@ -378,26 +402,8 @@
 
     <section id="oferta" class="section offer">
       <div class="container offer-grid">
-        <div class="ebook-wrap">
-          <div class="ebook-glow-a"></div>
-          <div class="ebook-glow-b"></div>
-          <div class="ebook">
-            <div class="ebook-inner">
-              <div>
-                <div class="ebook-badge">🚘 Ebook digital</div>
-                <p class="ebook-sub">Guia prático</p>
-                <h3 class="ebook-title">Motorista no Azul</h3>
-                <p class="ebook-desc">Controle gastos, descubra o lucro real e dirija com número na mão.</p>
-              </div>
-              <div class="ebook-features">
-                <div class="ebook-feature"><span>💳</span>Lucro real</div>
-                <div class="ebook-feature"><span>📍</span>Custo por km</div>
-                <div class="ebook-feature"><span>🧮</span>Meta diária</div>
-                <div class="ebook-feature"><span>📘</span>Método simples</div>
-              </div>
-            </div>
-          </div>
-          <p class="ebook-name">Motorista no Azul: O Guia Prático para Controlar Gastos e Aumentar seu Lucro nos Apps</p>
+        <div class="offer-image-wrap">
+          <img class="offer-image" src="assets/ebook-principal.png" alt="Ebook Motorista no Azul" />
         </div>
 
         <div>
